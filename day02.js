@@ -28,3 +28,20 @@ switch (topping) {
   default:
     console.log(`${topping} should not be on a pizza.`);
 }
+
+// Activity 3
+
+const password = "mypassword";
+if (password.length < 8) {
+  console.log("Your password is too short");
+} else {
+  console.log(`Your password is ${password}`);
+}
+
+// Using 'let' because num will be reused in the next activity
+let num = 21;
+if (num % 3 == 0 || num % 5 == 0) {
+  console.log("This number is divisible by 3 or 5");
+} else {
+  console.log("This number is NOT divisible by 3 or 5");
+}
