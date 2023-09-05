@@ -134,13 +134,14 @@ if (word[0] === word[word.length - 1]) {
 const num1 = 6;
 const num2 = 7;
 const sum = num1 + num2;
-const multiple = num1 * num2;
 if (sum % 2 == 0) {
   console.log(
     `The sume of the numbers is divisible by 2. The sum of the numbers is ${sum}`
   );
 } else {
   console.log(
-    `The sume of the numbers is NOT divisible by 2. The multiple of the numbers is ${multiple}`
+    `The sume of the numbers is NOT divisible by 2. The multiple of the numbers is ${
+      num1 * num2
+    }`
   );
 }
