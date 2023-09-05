@@ -72,3 +72,21 @@ console.log("Snacks array ", snacks);
 // select the 2nd and 3rd items form the list
 const selectedSnacks = snacks.slice(1, 3); // first parameter is the index of the first item to pick. Second number is where to stop
 console.log("Selected snacks array ", selectedSnacks);
+
+// Loops
+
+// Activity 1
+
+const favouriteFilms = [
+  "The Invasion of the Body Snathers",
+  "Fast and Durious",
+  "Mission Impossible",
+  "Jack Reacher",
+  "War of the Worlds",
+];
+console.log("Favourire films ", favouriteFilms);
+favouriteFilms.push("Pulp Fiction");
+favouriteFilms.push("Raiders of the Lost Ark");
+for (let i = 0; i < favouriteFilms.length; i++) {
+  console.log(`Film ${i + 1} is ${favouriteFilms[i]}`);
+}
