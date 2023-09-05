@@ -77,3 +77,24 @@ if (stringOfNum == reverseOfNum) {
 } else {
   console.log("Number is NOT a palindrome");
 }
+
+// Activity 6
+
+const time = 9;
+const placeOfWork = "Chorley";
+const townOfHome = "Buckshaw";
+
+switch (time) {
+  case 7:
+    console.log(`I'm at home in ${townOfHome}`);
+    break;
+
+  case 8:
+    console.log(`I'm commuting between ${townOfHome} and ${placeOfWork}`);
+    break;
+  case 9:
+    console.log(`I'm at work in ${placeOfWork}`);
+    break;
+  default:
+    console.log("You have entered an invalid time.");
+}
