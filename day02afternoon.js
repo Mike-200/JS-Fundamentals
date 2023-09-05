@@ -121,3 +121,16 @@ if (films[2] == "Ghostbusters") {
 } else {
   console.group("Boo! We want Ghostbusters");
 }
+
+// Activity 5
+
+randomNumber = 0; // re-using this varioable from before
+for (let i = 1; i <= 6; i++) {
+  randomNumber = Math.ceil(Math.random() * 30);
+  console.log(`Random number ${i} is ${randomNumber}`);
+  if (randomNumber % 7 == 0) {
+    console.log(`${randomNumber} IS divisible by 7`);
+  } else {
+    console.log(`${randomNumber} is NOT divisible by 7`);
+  }
+}
