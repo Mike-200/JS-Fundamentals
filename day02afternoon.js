@@ -98,3 +98,9 @@ for (let i = 1; i <= 6; i++) {
   randomNumber = Math.ceil(Math.random() * 50);
   console.log(`Random number ${i} is ${randomNumber}`);
 }
+
+// Activity 3
+
+for (let i = 9; i >= 0; i--) {
+  console.log(i);
+}
