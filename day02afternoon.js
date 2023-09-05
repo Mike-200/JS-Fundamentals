@@ -170,6 +170,11 @@ do {
 
 // The above yields the same results, however, the do while and the while loops
 // can be used more easily for variable lengths of loops
+
+// A for loop is for executing statements a known number of times
+// A while loop can end without executing a statement and can execute statements an unknown number of times
+// A do while loop will always execute a statement at least once and can execute statements an unknown number of times
+
 // The following example demonstrates a better example of the use of a while loop
 // The loop could keep executing until the condition becomes true / false
 
