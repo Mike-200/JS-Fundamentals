@@ -98,3 +98,24 @@ switch (time) {
   default:
     console.log("You have entered an invalid time.");
 }
+
+// Activity 7
+
+const string =
+  "jrfndklhgfndjkjlkgperfijfhdknsadcvjhiiohjfkledsopiuhgtyujwsdxcvhgfdjhiopiwquhejkdsoiufghedjwshi";
+for (let i = string.length - 1; i >= 0; i--) {
+  if (
+    string[i] == "a" ||
+    string[i] == "e" ||
+    string[i] == "i" ||
+    string[i] == "o" ||
+    string[i] == "u"
+  ) {
+    console.log(
+      `The last vowel in the string is ${string[i]} and it is at index ${i}`
+    );
+    break;
+  } else {
+    console.log("There is no vowel in the string.");
+  }
+}
