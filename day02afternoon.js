@@ -79,7 +79,7 @@ console.log("Selected snacks array ", selectedSnacks);
 
 const favouriteFilms = [
   "The Invasion of the Body Snathers",
-  "Fast and Durious",
+  "Fast and Furious",
   "Mission Impossible",
   "Jack Reacher",
   "War of the Worlds",
@@ -103,4 +103,21 @@ for (let i = 1; i <= 6; i++) {
 
 for (let i = 9; i >= 0; i--) {
   console.log(i);
+}
+
+// Activity 4
+
+const films = [
+  "The Invasion of the Body Snathers",
+  "Fast and Furious",
+  "Mission Impossible",
+  "Jack Reacher",
+];
+for (let i = 0; i < films.length; i++) {
+  console.log(`Film number ${i + 1} is ${films[i]}`);
+}
+if (films[2] == "Ghostbusters") {
+  console.log("Yay its Ghostbusters”.");
+} else {
+  console.group("Boo! We want Ghostbusters");
 }
