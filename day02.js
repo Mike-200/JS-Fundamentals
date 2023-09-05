@@ -63,3 +63,17 @@ switch (true) {
   default:
     console.log(num);
 }
+
+// Activity 5
+
+num = 1221;
+const stringOfNum = num.toString();
+let reverseOfNum = "";
+for (let i = stringOfNum.length - 1; i >= 0; i--) {
+  reverseOfNum += stringOfNum[i];
+}
+if (stringOfNum == reverseOfNum) {
+  console.log("Number is a palindrome");
+} else {
+  console.log("Number is NOT a palindrome");
+}
