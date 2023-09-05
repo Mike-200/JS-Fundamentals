@@ -119,3 +119,12 @@ for (let i = string.length - 1; i >= 0; i--) {
     console.log("There is no vowel in the string.");
   }
 }
+
+// Activity 8
+
+const word = "testing";
+if (word[0] === word[word.length - 1]) {
+  console.log(true);
+} else {
+  console.log(false);
+}
