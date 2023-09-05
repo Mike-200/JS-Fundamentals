@@ -134,3 +134,16 @@ for (let i = 1; i <= 6; i++) {
     console.log(`${randomNumber} is NOT divisible by 7`);
   }
 }
+
+// Activity 6
+
+const bobsFollowers = ["Mike", "John", "Paul", "Ringo"];
+const hannahsFollowers = ["Justine", "Janet", "Elaine", "Ringo"];
+console.log("Matching Followers:-");
+for (let i = 0; i < bobsFollowers.length; i++) {
+  for (let j = 0; j < hannahsFollowers.length; j++) {
+    if (bobsFollowers[i] == hannahsFollowers[j]) {
+      console.log(bobsFollowers[i]);
+    }
+  }
+}
