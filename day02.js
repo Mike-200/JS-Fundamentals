@@ -45,3 +45,21 @@ if (num % 3 == 0 || num % 5 == 0) {
 } else {
   console.log("This number is NOT divisible by 3 or 5");
 }
+
+// Activity 4
+
+// The variable 'num' has already been used in the previous activity
+num = 15;
+switch (true) {
+  case num % 3 == 0 && num % 5 == 0:
+    console.log("fizz buzz");
+    break;
+  case num % 3 == 0:
+    console.log("fizz");
+    break;
+  case num % 5 == 0:
+    console.log("buzz");
+    break;
+  default:
+    console.log(num);
+}
