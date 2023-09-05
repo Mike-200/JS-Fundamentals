@@ -1,3 +1,12 @@
+// Random number between 0 and 9
+console.log(Math.floor(Math.random() * 10));
+
+// Randowm number between 1 and 10
+console.log(Math.ceil(Math.random() * 10));
+
+// Randow number between 0 and 10
+console.log(Math.round(Math.random() * 10));
+
 // Around the World
 
 console.log("All Around the World".charAt(7).toUpperCase());
