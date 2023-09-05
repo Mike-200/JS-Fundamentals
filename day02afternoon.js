@@ -147,3 +147,38 @@ for (let i = 0; i < bobsFollowers.length; i++) {
     }
   }
 }
+
+// Activity 7
+
+// a for loop
+for (let i = 0; i < 6; i++) {
+  console.log(i);
+}
+
+// a while loop
+let whileLoopCount = 0;
+while (whileLoopCount < 6) {
+  console.log(whileLoopCount);
+  whileLoopCount++;
+} // a do while loop
+
+let doWhileLoopCount = 0;
+do {
+  console.log(doWhileLoopCount);
+  doWhileLoopCount++;
+} while (doWhileLoopCount < 6);
+
+// The above yields the same results, however, the do while and the while loops
+// can be used more easily for variable lengths of loops
+// The following example demonstrates a better example of the use of a while loop
+// The loop could keep executing until the condition becomes true / false
+
+let condition = false;
+let counter = 0;
+while (condition == false) {
+  counter++;
+  if (counter == 50) {
+    condition = true;
+  }
+}
+console.log(`Count reached. Counter is now at ${counter}`);
