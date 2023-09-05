@@ -90,3 +90,11 @@ favouriteFilms.push("Raiders of the Lost Ark");
 for (let i = 0; i < favouriteFilms.length; i++) {
   console.log(`Film ${i + 1} is ${favouriteFilms[i]}`);
 }
+
+// Activity 2
+
+let randomNumber = 0;
+for (let i = 1; i <= 6; i++) {
+  randomNumber = Math.ceil(Math.random() * 50);
+  console.log(`Random number ${i} is ${randomNumber}`);
+}
