@@ -40,3 +40,71 @@ const takeOrder = (topping1, topping2) => {
 takeOrder("ham", "pinapple");
 takeOrder("tuna", "cheese");
 takeOrder("chicken", "sweetcorn");
+
+// Activity 3 - Cash Machine
+
+const users = [
+  ["Mike", 1234, 500],
+  ["Paul", 5678, 1000],
+  ["John", 3579, 1500],
+];
+
+const withdrawCash = (client, pinNumber, withdrawalAmount) => {
+  // first find the user out the array
+  let userID = findUserID(client);
+  if (userID == -1) {
+    console.log(`Sorry ${client}. You do not have an account with us"`);
+    return;
+  }
+  // now check the user has entered the correct pin
+  if (checkIfPinIsCorrect(userID, pinNumber)) {
+    // now check if there are enough funds
+    if (checkIfFundsAvailable(userID, withdrawalAmount)) {
+      withdrawFunds(userID, withdrawalAmount);
+      console.log(
+        `${users[userID][0]}: You have withdrawn £${withdrawalAmount.toFixed(
+          2
+        )}. Your remaining balance is £${users[userID][2].toFixed(2)}`
+      );
+    } else {
+      console.log(`Sorry ${users[userID][0]}, you do not have enough funds.`);
+    }
+  } else {
+    console.log(
+      `Sorry ${users[userID][0]}, you have entered an incorrect pin.`
+    );
+  }
+};
+
+const findUserID = (client) => {
+  for (let i = 0; i < users.length; i++) {
+    if (client === users[i][0]) {
+      return i;
+    }
+  }
+  return -1;
+};
+
+const checkIfPinIsCorrect = (userID, pinNumber) => {
+  if (pinNumber === users[userID][1]) {
+    return true;
+  }
+  return false;
+};
+
+const checkIfFundsAvailable = (userID, withdrawalAmount) => {
+  if (withdrawalAmount <= users[userID][2]) {
+    return true;
+  }
+  return false;
+};
+
+const withdrawFunds = (userID, withdrawalAmount) => {
+  users[userID][2] -= withdrawalAmount;
+};
+
+withdrawCash("Mike", 1234, 50);
+withdrawCash("Paul", 5678, 1000);
+withdrawCash("Mike", 5678, 1000);
+withdrawCash("Mike", 1234, 1000);
+withdrawCash("Mike", 1234, 75);
