@@ -25,3 +25,18 @@ const factorial = (n) => {
   }
 };
 console.log(factorial(33));
+
+// Activity 2
+
+let orderCount = 0;
+
+const takeOrder = (topping1, topping2) => {
+  orderCount++;
+  console.log(
+    `Your pizza with ${topping1} and ${topping2} is being prepared. Your order number is ${orderCount}.`
+  );
+};
+
+takeOrder("ham", "pinapple");
+takeOrder("tuna", "cheese");
+takeOrder("chicken", "sweetcorn");
