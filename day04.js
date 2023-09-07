@@ -48,35 +48,40 @@ const coffeeShop = {
     chickenWrap: ["Chicken Wrap", 4.0],
     carrotCake: ["Carrot Cake", 1.85],
   },
-  drinksOrdered(order) {
-    const drinksOrder = [];
-    let drinksCost = 0;
+  itemsOrdered(order, itemType) {
+    let costOfItemsOrdered = 0;
     let receipt = "*** R e c e i p t ***\n---------------------\n";
-
-    // console.log(this.drinks.length);
+    const itemsOrdered = []; // athough this is not used here, it will be needed for the baristers
     for (let i = 0; i < order.length; i++) {
-      // console.log("order[i]: ", order[i]);
-      if (order[i] in this.drinks) {
-        //console.log(order[i]);
-        drinksOrder.push(this.drinks[order[i]][0]);
-        drinksCost += this.drinks[order[i]][1];
-        receipt += this.drinks[order[i]][0];
-        if (this.drinks[order[i]][0].length < 8) {
+      if (order[i] in this[itemType]) {
+        itemsOrdered.push(this[itemType][order[i]][0]);
+        costOfItemsOrdered += this[itemType][order[i]][1];
+        receipt += this[itemType][order[i]][0];
+        // format the receipt so all the costs lin eup
+        if (this[itemType][order[i]][0].length < 8) {
           receipt += "\t\t";
-        } else if (this.drinks[order[i]][0].length < 16) {
+        } else if (this[itemType][order[i]][0].length < 16) {
           receipt += "\t";
         }
-        receipt += "£" + this.drinks[order[i]][1].toFixed(2) + "\n";
+        receipt += "£" + this[itemType][order[i]][1].toFixed(2) + "\n";
       }
     }
-    receipt += `---------------------\nTotal Cost\t£${drinksCost.toFixed(2)}\n---------------------`;
+    // add the total at the bottom of the receipt
+    receipt += `---------------------\nTotal Cost\t£${costOfItemsOrdered.toFixed(
+      2
+    )}\n---------------------`;
     return receipt;
   },
-  foodOrdered() {
-    return `Your food order is `;
+  drinksOrdered(order) {
+    itemType = "drinks";
+    return this.itemsOrdered(order, itemType);
+  },
+  foodOrdered(order) {
+    itemType = "food";
+    return this.itemsOrdered(order, itemType);
   },
 };
 
-const myDrinksOrder = ["latte", "flatWhite", "scone", "carrotCake"];
-
-console.log(coffeeShop.drinksOrdered(myDrinksOrder));
+const myOrder = ["latte", "flatWhite", "scone", "carrotCake"];
+console.log(coffeeShop.drinksOrdered(myOrder));
+console.log(coffeeShop.foodOrdered(myOrder));
