@@ -1,3 +1,29 @@
+// Activity - Alarm
+
+const alarmType = (day) => {
+  const alarmType = {
+    weekendAlarm: "no alarm needed",
+    weekdayAlarm: "get up at 7am",
+  };
+  let alarm = "";
+  switch (day) {
+    case "Monday":
+    case "Tuesday":
+    case "Wednesday":
+    case "Thursday":
+    case "Friday":
+      alarm = alarmType.weekdayAlarm;
+      break;
+    case "Saturday":
+    case "Sunday":
+      alarm = alarmType.weekendAlarm;
+  }
+  return alarm;
+};
+
+const day = "Saturday";
+console.log(alarmType(day));
+
 // Activity 1
 
 const person = {
