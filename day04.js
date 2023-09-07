@@ -48,40 +48,55 @@ const coffeeShop = {
     chickenWrap: ["Chicken Wrap", 4.0],
     carrotCake: ["Carrot Cake", 1.85],
   },
-  itemsOrdered(order, itemType) {
-    let costOfItemsOrdered = 0;
-    let receipt = "*** R e c e i p t ***\n---------------------\n";
+  itemsOrdered(order, itemTypes) {
     const itemsOrdered = []; // athough this is not used here, it will be needed for the baristers
-    for (let i = 0; i < order.length; i++) {
-      if (order[i] in this[itemType]) {
-        itemsOrdered.push(this[itemType][order[i]][0]);
-        costOfItemsOrdered += this[itemType][order[i]][1];
-        receipt += this[itemType][order[i]][0];
-        // format the receipt so all the costs lin eup
-        if (this[itemType][order[i]][0].length < 8) {
-          receipt += "\t\t";
-        } else if (this[itemType][order[i]][0].length < 16) {
-          receipt += "\t";
+    let costOfItemsOrdered = 0;
+    // Clear the screen and print the reciept header
+    console.clear();
+    let receipt = "*** R e c e i p t ***\n---------------------\n";
+    // Loop through the array of item types
+    itemTypes.forEach((itemType) => {
+      for (let i = 0; i < order.length; i++) {
+        if (order[i] in this[itemType]) {
+          // add the items ordered to the barister's list
+          itemsOrdered.push(this[itemType][order[i]][0]);
+          // update the total cost of the order
+          costOfItemsOrdered += this[itemType][order[i]][1];
+          // add the item ordered to the receipt
+          receipt += this[itemType][order[i]][0];
+          // format the receipt so all the costs line up
+          if (this[itemType][order[i]][0].length < 8) {
+            receipt += "\t\t";
+          } else if (this[itemType][order[i]][0].length < 16) {
+            receipt += "\t";
+          }
+          // add the cost of the item ordered to the receipt
+          receipt += "£" + this[itemType][order[i]][1].toFixed(2) + "\n";
         }
-        receipt += "£" + this[itemType][order[i]][1].toFixed(2) + "\n";
       }
-    }
-    // add the total at the bottom of the receipt
+    });
+    // add the total cost at the bottom of the receipt
     receipt += `---------------------\nTotal Cost\t£${costOfItemsOrdered.toFixed(
       2
     )}\n---------------------`;
     return receipt;
   },
   drinksOrdered(order) {
-    itemType = "drinks";
-    return this.itemsOrdered(order, itemType);
+    itemTypes = ["drinks"];
+    return this.itemsOrdered(order, itemTypes);
   },
   foodOrdered(order) {
-    itemType = "food";
-    return this.itemsOrdered(order, itemType);
+    itemTypes = ["food"];
+    return this.itemsOrdered(order, itemTypes);
+  },
+  foodAndDrinksOrdered(order) {
+    itemTypes = ["food", "drinks"];
+    return this.itemsOrdered(order, itemTypes);
   },
 };
 
+// Only test one at a time as there is a clear screen in the function
 const myOrder = ["latte", "flatWhite", "scone", "carrotCake"];
-console.log(coffeeShop.drinksOrdered(myOrder));
-console.log(coffeeShop.foodOrdered(myOrder));
+// console.log(coffeeShop.drinksOrdered(myOrder));
+// console.log(coffeeShop.foodOrdered(myOrder));
+console.log(coffeeShop.foodAndDrinksOrdered(myOrder));
