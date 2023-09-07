@@ -95,8 +95,10 @@ const coffeeShop = {
   },
 };
 
-// Only test one at a time as there is a clear screen in the function
+// the array from the till
 const myOrder = ["latte", "flatWhite", "scone", "carrotCake"];
+// Only test one at a time as there is a clear screen in the function
+
 // console.log(coffeeShop.drinksOrdered(myOrder));
 // console.log(coffeeShop.foodOrdered(myOrder));
 console.log(coffeeShop.foodAndDrinksOrdered(myOrder));
