@@ -1,4 +1,5 @@
 // Activity - Alarm
+// deterine alarm type based on day
 
 const alarmType = (day) => {
   const alarmType = {
@@ -25,12 +26,14 @@ const day = "Saturday";
 console.log(alarmType(day));
 
 // Activity 1
+// object functions and the 'this' command
 
 const person = {
   name: "Mike",
   age: 21,
   address: "Buckshaw",
   sayHi() {
+    // use this.name to call on the person object that sayHi() and name are both in
     return `Hello my name is ${this.name}`;
   },
 };
@@ -39,6 +42,7 @@ console.log(person.name);
 console.log(person.sayHi());
 
 // Activity 2
+// object functions and the 'this' command
 
 const pet = {
   name: "Donald",
@@ -58,6 +62,7 @@ console.log(pet.eat());
 console.log(pet.drink());
 
 // Activity 3
+// create various methods for drinks orders and food orders
 
 const coffeeShop = {
   branch: "Chorley",
@@ -74,6 +79,7 @@ const coffeeShop = {
     chickenWrap: ["Chicken Wrap", 4.0],
     carrotCake: ["Carrot Cake", 1.85],
   },
+  // use one function that can take a parameter itemType so the same function can be reused for food and drinks, or both
   itemsOrdered(order, itemTypes) {
     const itemsOrdered = []; // athough this is not used here, it will be needed for the baristers
     let costOfItemsOrdered = 0;
@@ -107,6 +113,7 @@ const coffeeShop = {
     )}\n---------------------`;
     return receipt;
   },
+  // the following 3 functions all use the main itemsOrdered function and pass in which items to check against
   drinksOrdered(order) {
     itemTypes = ["drinks"];
     return this.itemsOrdered(order, itemTypes);
@@ -121,10 +128,10 @@ const coffeeShop = {
   },
 };
 
-// the array from the till
+// the array received from the person taking the order at the till
 const myOrder = ["latte", "flatWhite", "scone", "carrotCake"];
-// Only test one at a time as there is a clear screen in the function
 
+// Only test one at a time as there is a clear screen in the function
 // console.log(coffeeShop.drinksOrdered(myOrder));
 // console.log(coffeeShop.foodOrdered(myOrder));
 console.log(coffeeShop.foodAndDrinksOrdered(myOrder));
