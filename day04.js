@@ -67,12 +67,14 @@ console.log(pet.drink());
 const coffeeShop = {
   branch: "Chorley",
   drinks: {
+    // key: [friendly output for the receipt, price]
     latte: ["Latte", 3.2],
     cappuccino: ["Cappaccino", 3.15],
     flatWhite: ["Flat White", 3.5],
     americano: ["Americano", 2.85],
   },
   food: {
+    // key: [friendly output for the receipt, price]
     croissant: ["Croissant", 1.25],
     scone: ["Scone", 0.85],
     blt: ["BLT sandwich", 3.45],
