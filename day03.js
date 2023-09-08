@@ -1,4 +1,5 @@
 // Ticket Price Calculator
+// determine the ticket price based on age
 
 const age = 60;
 let ticketPrice = 0;
@@ -16,6 +17,7 @@ console.log(
 // Functions
 
 // Activity 1
+// take the code and turn it into an arrow function
 
 const factorial = (n) => {
   if (n === 0 || n === 1) {
@@ -27,10 +29,12 @@ const factorial = (n) => {
 console.log(factorial(33));
 
 // Activity 2
+// pizza toppings and order counts
 
 let orderCount = 0;
 
 const takeOrder = (topping1, topping2) => {
+  // increase the order number each time a new order is received
   orderCount++;
   console.log(
     `Your pizza with ${topping1} and ${topping2} is being prepared. Your order number is ${orderCount}.`
@@ -41,16 +45,18 @@ takeOrder("ham", "pinapple");
 takeOrder("tuna", "cheese");
 takeOrder("chicken", "sweetcorn");
 
-// Activity 3 - Cash Machine
+// Activity 3
+// Cash Machine - check if pin is correct and if then if funds are available
 
 const users = [
+  // name, pin number, balance
   ["Mike", 1234, 500],
   ["Paul", 5678, 1000],
   ["John", 3579, 1500],
 ];
 
 const withdrawCash = (client, pinNumber, withdrawalAmount) => {
-  // first find the user out the array
+  // first find the user out the array using the function findUserID
   let userID = findUserID(client);
   if (userID == -1) {
     console.log(`Sorry ${client}. You do not have an account with us"`);
@@ -58,8 +64,9 @@ const withdrawCash = (client, pinNumber, withdrawalAmount) => {
   }
   // now check the user has entered the correct pin
   if (checkIfPinIsCorrect(userID, pinNumber)) {
-    // now check if there are enough funds
+    // now check if there are enough funds using the checkIfFundsAreAvailable function
     if (checkIfFundsAvailable(userID, withdrawalAmount)) {
+      // now withdraw the funds using the fucntion withdrawFunds, if they are available
       withdrawFunds(userID, withdrawalAmount);
       console.log(
         `${users[userID][0]}: You have withdrawn £${withdrawalAmount.toFixed(
@@ -67,9 +74,11 @@ const withdrawCash = (client, pinNumber, withdrawalAmount) => {
         )}. Your remaining balance is £${users[userID][2].toFixed(2)}`
       );
     } else {
+      // let the user know they do not have enough funds
       console.log(`Sorry ${users[userID][0]}, you do not have enough funds.`);
     }
   } else {
+    // let the user know they have entered an incorrect pin
     console.log(
       `Sorry ${users[userID][0]}, you have entered an incorrect pin.`
     );
